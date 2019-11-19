@@ -1,24 +1,25 @@
 # vue_demo
 
-## Project setup
+## 项目安装
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 启动开发环境
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 打包项目
+
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### 对项目进行代码规范检测
+
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
