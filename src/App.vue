@@ -1,14 +1,19 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <index></index>
+  </div>
 </template>
 
 <script>
+import index from '@/views/index'
 export default {
   name: 'app',
   data() {
     return {}
   },
-  components: {}
+  components: {
+    index
+  }
 }
 </script>
 
