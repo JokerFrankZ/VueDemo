@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-const index = () => import('@/views/index')
 const home = () => import('@/views/home/home')
+const cinema = () => import('@/views/cinema/cinema')
+const profile = () => import('@/views/profile/profile')
 Vue.use(VueRouter)
 
 /**
@@ -15,7 +16,7 @@ VueRouter.prototype.push = function push(location) {
 const routes = [
   {
     path: '/',
-    component: index,
+    component: home,
     name: 'index',
     meta: {
       title: '心眼'
@@ -26,6 +27,20 @@ const routes = [
     component: home,
     meta: {
       title: '心眼电影'
+    }
+  },
+  {
+    path: '/cinema',
+    component: cinema,
+    meta: {
+      title: '影院'
+    }
+  },
+  {
+    path: '/profile',
+    component: profile,
+    meta: {
+      title: '我的'
     }
   }
 ]

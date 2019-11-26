@@ -1,17 +1,16 @@
 <template>
-  <div id="home">
-    <h1>电影</h1>
+  <div id="porfile">
+    <h1>我的</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'porfile',
   data: function() {
     return {}
   },
-  methods: {},
-  components: {}
+  methods: {}
 }
 </script>
 
