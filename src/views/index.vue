@@ -1,7 +1,7 @@
 <template>
   <div>
-    <main-header title="心眼电影">
-      <div v-if="showBcak"></div>
+    <main-header :title="title">
+      <div v-if="showBack()"></div>
     </main-header>
     <router-view></router-view>
     <main-tab-bar></main-tab-bar>
@@ -14,19 +14,33 @@ import mainTabBar from '@/components/content/mainTabBar'
 export default {
   name: 'index',
   data: function() {
-    return {}
-  },
-  computed: {
-    showBcak() {
-      return this.$route.path == '/home'
-      // 隐藏home页面的返回按钮
+    return {
+      title: '心眼'
     }
   },
+  computed: {},
   components: {
     mainHeader,
     mainTabBar
   },
-  methods: {}
+  methods: {
+    showBack() {
+      if (
+        this.$route.path == '/home' ||
+        this.$route.path == '/cinema' ||
+        this.$route.path == '/profile'
+      ) {
+        return true
+      } else {
+        return false
+      }
+      // 隐藏home页面和cinema页面的返回按钮
+    }
+  },
+  updated() {
+    // 通过使用生命周期函数检测页面的更新，把title实时传到mainHeader上
+    this.title = this.$route.matched[0].meta.title
+  }
 }
 </script>
 

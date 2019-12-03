@@ -31,16 +31,17 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+@import '~@/assets/css/mainColor.styl'
 .nav
   height 50px
-  background #e54847
+  background $activeColor
   display flex
   justify-content center
   align-items center
   position relative
   h1
     margin 0
-    color #fff
+    color $fontWhite
     font-weight 400
     font-size 18px
   .icon
@@ -48,7 +49,7 @@ export default {
     width 1.5em
     height 1.5em
     vertical-align -0.15em
-    fill #fff
+    fill $fontWhite
     overflow hidden
     left 5%
 </style>

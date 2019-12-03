@@ -1,17 +1,21 @@
 <template>
   <div id="home">
-    <h1>电影</h1>
+    <home-header></home-header>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import homeHeader from './components/homeHeader'
 export default {
   name: 'home',
   data: function() {
     return {}
   },
   methods: {},
-  components: {}
+  components: {
+    homeHeader
+  }
 }
 </script>
 

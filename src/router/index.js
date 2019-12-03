@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 const home = () => import('@/views/home/home')
 const cinema = () => import('@/views/cinema/cinema')
 const profile = () => import('@/views/profile/profile')
+const hotMoviesList = () => import('@/views/home/components/hotMoviesList')
 Vue.use(VueRouter)
 
 /**
@@ -16,15 +17,26 @@ VueRouter.prototype.push = function push(location) {
 const routes = [
   {
     path: '/',
-    component: home,
+    redirect: '/home',
     name: 'index',
     meta: {
       title: '心眼'
-    }
+    },
+    children: [
+      {
+        path: '/',
+        redirect: '/home/hotMoviesList'
+      },
+      {
+        path: 'hotMoviesList',
+        component: hotMoviesList
+      }
+    ]
   },
   {
     path: '/home',
     component: home,
+    name: 'home',
     meta: {
       title: '心眼电影'
     }
@@ -32,6 +44,7 @@ const routes = [
   {
     path: '/cinema',
     component: cinema,
+    name: 'cinema',
     meta: {
       title: '影院'
     }
@@ -39,6 +52,7 @@ const routes = [
   {
     path: '/profile',
     component: profile,
+    name: 'profile',
     meta: {
       title: '我的'
     }

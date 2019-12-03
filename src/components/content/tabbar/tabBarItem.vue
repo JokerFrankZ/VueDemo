@@ -35,20 +35,28 @@ export default {
   },
   methods: {
     clickItem() {
-      this.$router.push(this.path)
-      // 点击后跳转，path是父组件传进来的
+      if (this.$route.path === this.path) {
+        return
+      }
+      // 解决双击item跳转路由报错，当激活的路由path等有item的path时不跳转
+      this.$router.replace(this.path)
+      // 点击后跳转，path是父组件传进来的,replace是无法后退
     }
   }
 }
 </script>
 
 <style scoped lang="stylus">
+@import '~@/assets/css/mainColor.styl'
 #tabBarItem
+  width 100vw
+  // 占满整个item
   div
     display flex
     justify-content center
     span
       font-family PingFangSC-Regular,Hiragino Sans GB,sans-serif
+      // 仿照猫眼电影的字体
       font-size 12px
 #tabBarItem
   #item-icon
@@ -56,6 +64,6 @@ export default {
       width 25px
       height 25px
 .active
-  color #e54847
-  fill #e54847
+  color $activeColor
+  fill $activeColor
 </style>
