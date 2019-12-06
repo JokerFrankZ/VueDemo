@@ -4,6 +4,9 @@ const home = () => import('@/views/home/home')
 const cinema = () => import('@/views/cinema/cinema')
 const profile = () => import('@/views/profile/profile')
 const hotMoviesList = () => import('@/views/home/components/hotMoviesList')
+const comingMoviesList = () =>
+  import('@/views/home/components/comingMoviesList')
+
 Vue.use(VueRouter)
 
 /**
@@ -21,6 +24,14 @@ const routes = [
     name: 'index',
     meta: {
       title: '心眼'
+    }
+  },
+  {
+    path: '/home',
+    component: home,
+    name: 'home',
+    meta: {
+      title: '心眼电影'
     },
     children: [
       {
@@ -29,17 +40,21 @@ const routes = [
       },
       {
         path: 'hotMoviesList',
-        component: hotMoviesList
+        component: hotMoviesList,
+        name: 'hotMoviesList',
+        meta: {
+          myPath: '/home/hotMoviesList'
+        }
+      },
+      {
+        path: 'comingMoviesList',
+        component: comingMoviesList,
+        name: 'comingMoviesList',
+        meta: {
+          myPath: '/home/comingMoviesList'
+        }
       }
     ]
-  },
-  {
-    path: '/home',
-    component: home,
-    name: 'home',
-    meta: {
-      title: '心眼电影'
-    }
   },
   {
     path: '/cinema',

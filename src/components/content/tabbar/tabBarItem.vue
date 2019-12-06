@@ -25,8 +25,8 @@ export default {
       // return this.$route.path.indexOf(this.path) !== -1
       // 判断处于激活状态的path等不等于这个item本身的path
       // indexOf是判断包不包含，如果不包含就返回-1
-      return this.$route.path == this.path
-      // 判断激活状态的path是否等于传入的path
+      return !this.$route.path.indexOf(this.path)
+      // 判断激活状态的path是否包含传入的path
     },
     activeStyle() {
       return this.isActive ? { active: this.isActive } : {}

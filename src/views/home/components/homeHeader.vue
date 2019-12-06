@@ -7,8 +7,18 @@
           <use xlink:href="#icondaosanjiao"></use>
         </svg>
       </li>
-      <li @click="goHotMoviesList">正在热映</li>
-      <li>即将上映</li>
+      <li
+        @click="goTo('/home/hotMoviesList')"
+        :class="{ active: '/home/hotMoviesList' == $route.path }"
+      >
+        正在热映
+      </li>
+      <li
+        @click="goTo('/home/comingMoviesList')"
+        :class="{ active: '/home/comingMoviesList' == $route.path }"
+      >
+        即将上映
+      </li>
       <li>
         <svg class="icon" aria-hidden="true" slot="item-icon">
           <use xlink:href="#iconsousuo"></use>
@@ -24,12 +34,9 @@ export default {
   data: function() {
     return {}
   },
-  components: {},
   methods: {
-    goHotMoviesList() {
-      this.$router.push({
-        path: '/home/hotMoviesList'
-      })
+    goTo(url) {
+      this.$router.push(url)
     }
   }
 }
@@ -89,4 +96,16 @@ export default {
         height 20px
         margin-left 40px
         fill $activeColor
+  .active
+    color $activeColor
+    &:before
+        content ""
+        position absolute
+        bottom -1px
+        width 0
+        height 2px
+        background $activeColor
+        width: 100%;
+        left: 0;
+        right: 0;
 </style>
