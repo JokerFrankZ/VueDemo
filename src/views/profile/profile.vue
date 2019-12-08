@@ -1,6 +1,8 @@
 <template>
   <div id="profile">
-    <h1>我的</h1>
+    <svg class="icon" aria-hidden="true" slot="item-icon">
+      <use xlink:href="#iconlogo"></use>
+    </svg>
   </div>
 </template>
 
