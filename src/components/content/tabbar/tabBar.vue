@@ -19,7 +19,7 @@ export default {
   background #ffffff
   width 100vw
   height 48px
-  position absolute
+  position fixed
   bottom 0
   display flex
   justify-content space-around

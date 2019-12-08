@@ -1,12 +1,12 @@
 <template>
-  <div id="porfile">
+  <div id="profile">
     <h1>我的</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'porfile',
+  name: 'profile',
   data: function() {
     return {}
   },
@@ -14,4 +14,7 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped lang="stylus">
+#profile
+  padding-top 50px
+</style>

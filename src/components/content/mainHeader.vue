@@ -33,12 +33,14 @@ export default {
 <style scoped lang="stylus">
 @import '~@/assets/css/mainColor.styl'
 .nav
+  width 100vw
   height 50px
   background $activeColor
   display flex
   justify-content center
   align-items center
-  position relative
+  position fixed
+  z-index 999
   h1
     margin 0
     color $fontWhite

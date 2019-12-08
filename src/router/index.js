@@ -6,7 +6,7 @@ const profile = () => import('@/views/profile/profile')
 const hotMoviesList = () => import('@/views/home/components/hotMoviesList')
 const comingMoviesList = () =>
   import('@/views/home/components/comingMoviesList')
-
+const search = () => import('@/views/search/search')
 Vue.use(VueRouter)
 
 /**
@@ -70,6 +70,14 @@ const routes = [
     name: 'profile',
     meta: {
       title: '我的'
+    }
+  },
+  {
+    path: '/search',
+    component: search,
+    name: 'search',
+    meta: {
+      title: '心眼电影'
     }
   }
 ]

@@ -19,7 +19,7 @@
       >
         即将上映
       </li>
-      <li>
+      <li @click="goTo('/search')">
         <svg class="icon" aria-hidden="true" slot="item-icon">
           <use xlink:href="#iconsousuo"></use>
         </svg>
@@ -48,6 +48,10 @@ export default {
   width 100vw
   height 44px
   border-bottom  1px solid $borderColor
+  position fixed
+  top 50px
+  z-index 999
+  background #fff
   ul
     list-style none
     padding 0

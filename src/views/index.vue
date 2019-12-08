@@ -3,7 +3,9 @@
     <main-header :title="title">
       <div v-if="showBack()"></div>
     </main-header>
-    <router-view></router-view>
+    <keep-alive exclude="search">
+      <router-view></router-view>
+    </keep-alive>
     <main-tab-bar></main-tab-bar>
   </div>
 </template>

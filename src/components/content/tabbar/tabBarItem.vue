@@ -35,7 +35,10 @@ export default {
   },
   methods: {
     clickItem() {
-      if (this.$route.path === this.path) {
+      if (
+        this.$route.path === this.path ||
+        this.$route.path === `${this.path}/hotMoviesList` //用于解决重复点击home带来的报错
+      ) {
         return
       }
       // 解决双击item跳转路由报错，当激活的路由path等有item的path时不跳转
